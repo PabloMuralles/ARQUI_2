@@ -1,0 +1,15 @@
+create table data(
+	ID int not null AUTO_INCREMENT,
+	TimeStamp timestamp,
+	Date date not null default current_date,
+	Time time not null default current_time
+);
+
+create table data(ID int not null AUTO_INCREMENT,TimeStamp timestamp,Date date not null default current_date,Time time not null default current_time, primary key(ID));
+
+create table data(ID int not null AUTO_INCREMENT,TimeStamp timestamp,primary key(ID));
+
+usuario: pablo
+contraseña: admin
+usuario: root
+contraseña: admin
