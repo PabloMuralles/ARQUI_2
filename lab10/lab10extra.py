@@ -23,6 +23,9 @@ GPIO.setup(7, GPIO.OUT)
 #puerto para encer la led
 GPIO.setup(2, GPIO.OUT)
 
+#puerto para el relay
+GPIO.setup(3, GPIO.OUT)
+
 # 14 -> 1 -> e
 # 15 -> 2 -> d
 # 18 -> 4 -> c
@@ -30,6 +33,8 @@ GPIO.setup(2, GPIO.OUT)
 # 24 -> 7 -> a
 # 25 -> 9 -> f
 # 8 -> 10 -> g
+
+#def PrenderRelay()
 
 
 def ComunicacionServidor(tempJson):
@@ -55,6 +60,7 @@ def ComunicacionServidor(tempJson):
     GPIO.output(8, numString[6]=='1')
     #mandarlo a la led para encender si hay un 1
     GPIO.output(2, numString[7]=='1')
+
 
         
         
