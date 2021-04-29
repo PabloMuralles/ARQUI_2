@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 import requests
+import time
+
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -34,7 +36,14 @@ GPIO.setup(3, GPIO.OUT)
 # 25 -> 9 -> f
 # 8 -> 10 -> g
 
-#def PrenderRelay()
+def PrenderRelay(contador):
+    GPIO.output(2, False)
+    for i in range(contador):
+        GPIO.output(3, True)
+        time.sleep(1)
+        GPIO.output(3, False)
+        time.sleep(1)
+        
 
 
 def ComunicacionServidor(tempJson):
@@ -60,6 +69,8 @@ def ComunicacionServidor(tempJson):
     GPIO.output(8, numString[6]=='1')
     #mandarlo a la led para encender si hay un 1
     GPIO.output(2, numString[7]=='1')
+    
+    PrenderRelay(int(numString[8:10]))
 
 
         
