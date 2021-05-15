@@ -1,0 +1,20 @@
+you have to write the file in the next path
+/etc/systemd/system/
+the name have to be: <nombre>.service
+in this example is lab10arqui.service
+example: sudo vim /etc/systemd/system/lab10arqui.service
+inside of this file put the next:
+[Unit]
+Description=Extra lab for computer architecture
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/Desktop/ARQUI_2/lab10/lab10extra.py
+
+[Install]
+WantedBy=multi-user.target
+
+this is to do a service that run a python file if you want to do other thing you need to modify this file
+
+finally you yave to enable the service with the next command:sudo systemctl enable <nombre>.service and then start the service with the next command:sudo systemctl start <nombre>.service
